@@ -1,3 +1,4 @@
+import os
 import discord
 from discord.ext import commands
 
@@ -12,5 +13,9 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 @bot.event
 async def on_ready():
     print(f"{bot.user} giriş yaptı!")
+
+@bot.command()
+async def test(ctx):
+    await ctx.send("Noxi aktif! 🟢")
 
 bot.run(TOKEN)
